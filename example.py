@@ -4,4 +4,6 @@ temperatures = Temperatures(port = 49099)
 
 last_temperatures = temperatures.get_temperatures()
 for key in last_temperatures:
-    print(f"{key}\t=\t{last_temperatures[key]}\tK")
+    temperature =  last_temperatures[key]
+    temperature_rounded = round(temperature, 1)
+    print(f"{key}\t=\t{temperature_rounded}\tK")

@@ -30,5 +30,17 @@ temperatures = Temperatures(port = 49099)
 
 last_temperatures = temperatures.get_temperatures()
 for key in last_temperatures:
-    print(f"{key}\t=\t{last_temperatures[key]}\tK")
+    temperature =  last_temperatures[key]
+    temperature_rounded = round(temperature, 1)
+    print(f"{key}\t=\t{temperature_rounded}\tK")
+```
+
+### Output
+```
+t50k    =       55.2     K
+t4k     =       15.7     K
+tmagnet =       16.2     K
+tstill  =       18.8     K
+tmixing =       19.5     K
+tfse    =       25.3     K
 ```
