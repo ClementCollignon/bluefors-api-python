@@ -1,7 +1,7 @@
 # Bluefors API with python
 
-This repo helps you collect all relevant temperatures from Bluefors LD250 control unit.
-All updates on the temperatures are run asynchronously.
+This repo helps you collect all relevant temperatures from Bluefors LD250 control unit.  
+All updates on the temperatures are run asynchronously.  
 Will include pressure reading, pumps status and valve status in the future.
 
 You will need:
