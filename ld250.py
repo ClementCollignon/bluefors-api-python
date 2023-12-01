@@ -2,26 +2,6 @@ import asyncio
 import websockets
 import json
 
-class Fridge(object):
-    """
-    Class that collect all relevant temperatures and pressures 
-    from Bluefors LD250 control unit.
-    Attributes:
-        port:   the port through which the websocket is open.
-                default port number on LD250 is 49099 for unsecure ws
-    """
-    def __init__(self, port = 49099) -> None:
-        self.port = port
-        self.temperatures = Temperatures(port)
-        self.pressures = Pressures(port)
-
-    def get_temperatures(self):
-        return self.temperatures.get_temperatures()
-
-    def get_pressures(self):
-        return self.pressures.get_pressures()
-    
-
 class Temperatures(object):
     """
     Class that collect all relevant temperatures from
@@ -259,3 +239,22 @@ class Pressures(object):
     
     def _update_pressures(self, t_name, value):
         self._pressures[t_name] = value
+
+class Fridge(object):
+    """
+    Class that collect all relevant temperatures and pressures 
+    from Bluefors LD250 control unit.
+    Attributes:
+        port:   the port through which the websocket is open.
+                default port number on LD250 is 49099 for unsecure ws
+    """
+    def __init__(self, port = 49099) -> None:
+        self.port = port
+        self.temperatures = Temperatures(port)
+        self.pressures = Pressures(port)
+
+    def get_temperatures(self):
+        return self.temperatures.get_temperatures()
+
+    def get_pressures(self):
+        return self.pressures.get_pressures()
